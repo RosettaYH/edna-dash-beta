@@ -28,7 +28,7 @@ function App() {
           <main className="content">
             <Topbar />
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/edna-dash-beta" element={<Home />} />
               {/* <Route path="sample" element={<Sample />} /> */}
               <Route path="sample/:token" element={<Sample />} />
               <Route path="/insights" element={<Stat />} />
