@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/edna-dash-beta/static/css/main.ae0f2afd.css",
-    "main.js": "/edna-dash-beta/static/js/main.68cf66b5.js",
+    "main.js": "/edna-dash-beta/static/js/main.3509f752.js",
     "static/js/651.a2a9d3d9.chunk.js": "/edna-dash-beta/static/js/651.a2a9d3d9.chunk.js",
     "static/media/logo.svg": "/edna-dash-beta/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/edna-dash-beta/index.html",
     "main.ae0f2afd.css.map": "/edna-dash-beta/static/css/main.ae0f2afd.css.map",
-    "main.68cf66b5.js.map": "/edna-dash-beta/static/js/main.68cf66b5.js.map",
+    "main.3509f752.js.map": "/edna-dash-beta/static/js/main.3509f752.js.map",
     "651.a2a9d3d9.chunk.js.map": "/edna-dash-beta/static/js/651.a2a9d3d9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ae0f2afd.css",
-    "static/js/main.68cf66b5.js"
+    "static/js/main.3509f752.js"
   ]
 }
