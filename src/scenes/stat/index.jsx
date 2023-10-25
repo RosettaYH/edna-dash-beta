@@ -9,7 +9,7 @@ const Stat = () => {
   return (
     <div>
       <Box m="20px" pr="10px" background={palette.background.main}>
-        <Header title="Stat" />
+        <Header title="Deep Dive" />
         <BarChart data={samplesData} />
         <Box
           display="grid"
@@ -24,10 +24,10 @@ const Stat = () => {
               fontWeight="600"
               sx={{ padding: "30px 30px 0 30px" }}
             >
-              Distribution Across All Samples
+              Number of Successful Matches (All Species)
             </Typography>
-            <Box height="70vh" mt="-20px">
-              <BarChart data={samplesData} />
+            <Box height="80vh" mt="-20px">
+              <BarChart data={samplesData} hasLimit={false} />
             </Box>
           </Box>
         </Box>

@@ -9,7 +9,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import samplesData from "../../data/samplesHelper";
 
-const Home = () => {
+const Summary = () => {
   const { palette } = useTheme();
 
   const handleEvent: GridEventListener<"rowClick"> = (
@@ -37,7 +37,7 @@ const Home = () => {
   return (
     <div>
       <Box m="20px" pr="10px" background={palette.background.main}>
-        <Header title="Home" subtitle="List of Samples" />
+        <Header title="Summary" subtitle="List of Samples" />
         <Box
           display="grid"
           gridTemplateColumns="repeat(12, 1fr)"
@@ -57,9 +57,12 @@ const Home = () => {
                 color: palette.primary[300]
               },
               "& .MuiDataGrid-columnHeaders": {
-                color: "#3661eb",
+                color: palette.primary[600],
                 fontSize: 16,
                 fontWeight: "bold"
+              },
+              "& .MuiDataGrid-root": {
+                borderColor: "transparent"
               }
             }}
           >
@@ -79,9 +82,9 @@ const Home = () => {
               fontWeight="600"
               sx={{ padding: "30px 30px 0 30px" }}
             >
-              Distribution of species
+              Number of Successful Matches (Top 5 Species)
             </Typography>
-            <Box height="300px" mt="-20px">
+            <Box height="280px" mt="-20px">
               <BarChart data={samplesData} />
             </Box>
           </Box>
@@ -103,4 +106,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Summary;

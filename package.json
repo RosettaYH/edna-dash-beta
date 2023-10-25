@@ -17,7 +17,6 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "formik": "^2.4.5",
-    "gh-pages": "^6.0.0",
     "papaparse": "^5.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -57,5 +56,8 @@
     "node": "16.x",
     "npm": "8.x"
   },
-  "homepage": "https://rosettayh.github.io/edna-dash-beta/"
+  "homepage": "https://rosettayh.github.io/edna-dash-beta/",
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
+  }
 }

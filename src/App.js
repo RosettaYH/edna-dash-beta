@@ -9,7 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Sidebar from "./scenes/global/Sidebar";
 import Topbar from "./scenes/global/Topbar";
-import Home from "./scenes/home";
+import Summary from "./scenes/summary";
 import Sample from "./scenes/sample";
 import Stat from "./scenes/stat";
 
@@ -28,7 +28,7 @@ function App() {
           <main className="content">
             <Topbar />
             <Routes>
-              <Route path="/edna-dash-beta" element={<Home />} />
+              <Route path="/edna-dash-beta" element={<Summary />} />
               {/* <Route path="sample" element={<Sample />} /> */}
               <Route path="sample/:token" element={<Sample />} />
               <Route path="/insights" element={<Stat />} />

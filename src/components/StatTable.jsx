@@ -5,20 +5,27 @@ const StatTable = ({ data }) => {
   const { palette } = useTheme();
   const columns = [
     {
-      field: "accession",
-      headerName: "Species Accession",
-      flex: 1
+      field: "organism",
+      headerName: "Organism",
+      flex: 2
     },
+
     {
       field: "percent_identity",
       headerName: "Percent Identity",
       flex: 1
     },
     {
-      field: "organism",
-      headerName: "Organism",
-      flex: 2
+      field: "value",
+      headerName: "Number of Occurences",
+      flex: 1
     },
+    {
+      field: "accession",
+      headerName: "Species Accession",
+      flex: 1
+    },
+
     {
       field: "class_name",
       headerName: "Class Name",
@@ -42,11 +49,6 @@ const StatTable = ({ data }) => {
     {
       field: "genus",
       headerName: "Genus",
-      flex: 1
-    },
-    {
-      field: "value",
-      headerName: "Number of Occurances",
       flex: 1
     }
   ];

@@ -2,7 +2,7 @@ import { useTheme, Box } from "@mui/material";
 import { ResponsiveBar } from "@nivo/bar";
 import React from "react";
 
-const BarChart = ({ data }) => {
+const BarChart = ({ data, hasLimit = true }) => {
   const { palette } = useTheme();
 
   const processedData = data.map((sample) => {
@@ -30,13 +30,14 @@ const BarChart = ({ data }) => {
       }
     });
   });
+  const sortedOrganisms = Object.keys(totalOrganisms).sort(
+    (a, b) => totalOrganisms[b] - totalOrganisms[a]
+  );
 
-  // Get the top 10 accession keys sorted by their aggregated values
-  const top5Organisms = Object.keys(totalOrganisms)
-    .sort((a, b) => totalOrganisms[b] - totalOrganisms[a])
-    .slice(0, 5);
-
-  // Filter processedData to contain only the top 10 accessions
+  const top5Organisms = hasLimit
+    ? sortedOrganisms.slice(0, 5)
+    : sortedOrganisms;
+  console.log(hasLimit);
   const filteredData = processedData.map((sample) => {
     const filteredSample = { id: sample.id };
     top5Organisms.forEach((organism) => {
@@ -86,15 +87,15 @@ const BarChart = ({ data }) => {
         tickSize: 5,
         tickPadding: 5,
         tickRotation: -90,
-        // legend: "barcode",
+        legend: "Sample Number",
         legendPosition: "middle",
-        legendOffset: 32
+        legendOffset: 38
       }}
       axisLeft={{
         tickSize: 5,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "count", // changed
+        legend: "Number of Matches", // changed
         legendPosition: "middle",
         legendOffset: -60
       }}

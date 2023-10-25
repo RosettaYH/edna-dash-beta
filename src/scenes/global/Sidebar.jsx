@@ -57,7 +57,7 @@ const Sidebar = () => {
         <Menu iconShape="square">
           {/* LOGO AND MENU ICON */}
           <MenuItem
-            icon={<MenuOutlinedIcon color={palette.grey[100]} />}
+            // icon={<MenuOutlinedIcon color={palette.grey[100]} />}
             style={{
               margin: "10px 0 20px 0",
               color: palette.grey[100]
@@ -80,7 +80,7 @@ const Sidebar = () => {
                 alt="profile-user"
                 width="100px"
                 height="100px"
-                src={`https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D`}
+                src={`https://media.istockphoto.com/id/1306441450/photo/underwater-light.webp?b=1&s=170667a&w=0&k=20&c=HS-D6VolrolBc-V3of0iIfoQsQHT_nZy3P3xpLxJyPU=`}
                 style={{ cursor: "pointer", borderRadius: "50%" }}
               />
             </Box>
@@ -91,17 +91,17 @@ const Sidebar = () => {
                 fontWeight="bold"
                 sx={{ m: "10px 0 0 0" }}
               >
-                Name
+                User
               </Typography>
               <Typography variant="h5" color={palette.primary[500]}>
-                location
+                Company Name
               </Typography>
             </Box>
           </Box>
 
           <Box paddingLeft={"10%"}>
             <Item
-              title="Home"
+              title="Summary"
               to="/edna-dash-beta/"
               icon={<HomeOutlinedIcon />}
               selected={selected}

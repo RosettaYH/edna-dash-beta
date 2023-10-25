@@ -12,6 +12,7 @@ import BarChart from "../../components/BarChart";
 import SunburstChart from "../../components/SunburstChart";
 import StatTable from "../../components/StatTable";
 import StatBox from "../../components/StatBox";
+import Footer from "../../components/Footer";
 
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
@@ -38,7 +39,7 @@ const Sample = () => {
   return (
     <Box m="20px" pr="10px" sx={{ height: "100%" }}>
       <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Header title="Sample 1" subtitle="Dashboard" />
+        <Header title={`Sample ${token}`} subtitle="Dashboard" />
         <Box>
           <Button
             sx={{
@@ -103,7 +104,7 @@ const Sample = () => {
         <Box gridColumn="span 2">
           <StatBox
             title={"95%"}
-            subtitle="Confidence Level"
+            subtitle="Confidence Level *"
             icon={
               <CheckCircleOutlineIcon
                 sx={{ color: palette.primary[600], fontSize: "26px" }}
@@ -144,7 +145,7 @@ const Sample = () => {
                 fontWeight="600"
                 color={palette.grey[900]}
               >
-                Breakdown of Species
+                Breakdown of Species Identity
               </Typography>
             </Box>
             <Box>
@@ -190,11 +191,12 @@ const Sample = () => {
           >
             Top 5 Species
           </Typography>
-          <Box height="230px" mt="-20px">
+          <Box height="220px" mt="-20px">
             <BarChart data={[sampleData]} />
           </Box>
         </Box>
       </Box>
+      <Footer />
     </Box>
   );
 };
