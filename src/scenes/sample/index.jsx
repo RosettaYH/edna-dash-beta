@@ -1,5 +1,4 @@
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
-import { tokens } from "../../theme";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import QrCodeIcon from "@mui/icons-material/QrCode";
@@ -31,7 +30,6 @@ const getSampleData = async (token) => {
 const Sample = () => {
   const { token } = useParams();
 
-  console.log("This is he token", token);
   const { palette } = useTheme();
 
   const sampleData = samplesData[parseInt(token, 10) - 1];
@@ -67,7 +65,7 @@ const Sample = () => {
       >
         <Box gridColumn="span 2">
           <StatBox
-            title={"###"}
+            title={token}
             subtitle="Sample ID"
             icon={
               <QrCodeIcon
@@ -110,28 +108,15 @@ const Sample = () => {
                 sx={{ color: palette.primary[600], fontSize: "26px" }}
               />
             }
-            progress="0.80"
+            // progress="0.80"
           />
         </Box>
-        {/* <Box
+        <Box
           gridColumn="span 4"
-          // backgroundColor="#ffffff"
-          // display="flex"
-          // alignItems="center"
-          // justifyContent="center"
+          gridRow="span 3"
+          backgroundColor="#ffffff"
+          borderRadius="5px"
         >
-          <StatBox
-            title={new Date(sampleData.date).toLocaleDateString()}
-            subtitle="Date Collected"
-            icon={
-              <CalendarTodayIcon
-                sx={{ color: palette.primary[600], fontSize: "26px" }}
-              />
-            }
-          />
-        </Box> */}
-        {/* PIE */}
-        <Box gridColumn="span 4" gridRow="span 3" backgroundColor="#ffffff">
           <Box
             mt="25px"
             p="0 30px"
@@ -156,7 +141,7 @@ const Sample = () => {
               </IconButton>
             </Box>
           </Box>
-          <Box height="350px">
+          <Box height="320px">
             <SunburstChart data={[sampleData]} />
           </Box>
         </Box>
@@ -166,6 +151,7 @@ const Sample = () => {
           backgroundColor="#ffffff"
           overflow="auto"
           // sx={{ height: "20%" }}
+          borderRadius="5px"
         >
           <Box
             display="flex"
@@ -183,7 +169,12 @@ const Sample = () => {
             <StatTable data={sampleData.output} />
           </Box>
         </Box>
-        <Box gridColumn="span 4" gridRow="span 2" backgroundColor="#ffffff">
+        <Box
+          gridColumn="span 4"
+          gridRow="span 2"
+          backgroundColor="#ffffff"
+          borderRadius="5px"
+        >
           <Typography
             variant="h3"
             fontWeight="600"

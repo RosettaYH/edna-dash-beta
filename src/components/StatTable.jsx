@@ -69,9 +69,15 @@ const StatTable = ({ data }) => {
           borderColor: "transparent"
         },
         "& .MuiDataGrid-columnHeaderTitle": {
+          color: palette.primary[600],
           whiteSpace: "normal",
           wordWrap: "break-word",
-          lineHeight: "15px"
+          lineHeight: "15px",
+          fontWeight: "600"
+        },
+        "& .MuiButton-root": {
+          color: palette.grey[600]
+          // backgroundColor: palette.grey[400] // This line sets the background color for the toolbar
         }
       }}
     >

@@ -24,9 +24,9 @@ const Stat = () => {
               fontWeight="600"
               sx={{ padding: "30px 30px 0 30px" }}
             >
-              Number of Successful Matches (All Species)
+              Number of Successful Matches (Top 25 Species)
             </Typography>
-            <Box height="80vh" mt="-20px">
+            <Box height="600px" mt="-20px">
               <BarChart data={samplesData} hasLimit={false} />
             </Box>
           </Box>

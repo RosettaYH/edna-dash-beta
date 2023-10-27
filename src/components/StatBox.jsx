@@ -12,11 +12,12 @@ const StatBox = ({ title, subtitle, icon, progress, increase }) => {
       alignItems="center"
       justifyContent="center"
       height="100%"
+      borderRadius="5px"
     >
       <Box width="100%" m="0 30px">
         <Box display="flex" justifyContent="space-between">
           <Box>
-            {icon}
+            {icon && icon}
             <Typography
               variant="h3"
               fontWeight="bold"

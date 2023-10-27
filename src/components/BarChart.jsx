@@ -36,7 +36,7 @@ const BarChart = ({ data, hasLimit = true }) => {
 
   const top5Organisms = hasLimit
     ? sortedOrganisms.slice(0, 5)
-    : sortedOrganisms;
+    : sortedOrganisms.slice(0, 25);
   console.log(hasLimit);
   const filteredData = processedData.map((sample) => {
     const filteredSample = { id: sample.id };

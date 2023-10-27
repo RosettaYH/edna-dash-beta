@@ -1,9 +1,13 @@
 import { Box, Typography } from "@mui/material";
 import { DataGrid, GridToolbar, GridEventListener } from "@mui/x-data-grid";
 import Header from "../../components/Headers";
+import StatBox from "../../components/StatBox";
 import BarChart from "../../components/BarChart";
 import TimeChart from "../../components/TimeChart";
 import { useTheme } from "@mui/material";
+
+import LibraryAddIcon from "@mui/icons-material/LibraryAdd";
+import PendingActionsIcon from "@mui/icons-material/PendingActions";
 
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -45,9 +49,48 @@ const Summary = () => {
           gap="20px"
           sx={{ height: "100%" }}
         >
+          <Box gridColumn="span 3">
+            <StatBox
+              title={"7"}
+              subtitle="Total Sample Count"
+              icon={
+                <LibraryAddIcon
+                  sx={{ color: palette.primary[600], fontSize: "26px" }}
+                />
+              }
+            />
+          </Box>
+          <Box gridColumn="span 3">
+            <StatBox
+              title={"1"}
+              subtitle="Total Days Collected"
+              icon={
+                <PendingActionsIcon
+                  sx={{ color: palette.primary[600], fontSize: "26px" }}
+                />
+              }
+            />
+          </Box>
           <Box
             gridColumn="span 6"
-            gridRow="span 4"
+            gridRow="span 2"
+            backgroundColor="#ffffff"
+            borderRadius="5px"
+          >
+            <Typography
+              variant="h3"
+              fontWeight="600"
+              sx={{ padding: "30px 30px 0 30px" }}
+            >
+              Number of Successful Matches (Top 5 Species)
+            </Typography>
+            <Box height="280px" mt="-20px">
+              <BarChart data={samplesData} />
+            </Box>
+          </Box>
+          <Box
+            gridColumn="span 6"
+            gridRow="span 3"
             m="0 0 0 0"
             //   height="75vh"
             sx={{
@@ -58,8 +101,11 @@ const Summary = () => {
               },
               "& .MuiDataGrid-columnHeaders": {
                 color: palette.primary[600],
+                whiteSpace: "normal",
+                wordWrap: "break-word",
+                lineHeight: "15px",
                 fontSize: 16,
-                fontWeight: "bold"
+                fontWeight: "600"
               },
               "& .MuiDataGrid-root": {
                 borderColor: "transparent"
@@ -76,19 +122,12 @@ const Summary = () => {
               }}
             />
           </Box>
-          <Box gridColumn="span 6" gridRow="span 2" backgroundColor="#ffffff">
-            <Typography
-              variant="h3"
-              fontWeight="600"
-              sx={{ padding: "30px 30px 0 30px" }}
-            >
-              Number of Successful Matches (Top 5 Species)
-            </Typography>
-            <Box height="280px" mt="-20px">
-              <BarChart data={samplesData} />
-            </Box>
-          </Box>
-          <Box gridColumn="span 6" gridRow="span 2" backgroundColor="#ffffff">
+          <Box
+            gridColumn="span 6"
+            gridRow="span 2"
+            backgroundColor="#ffffff"
+            borderRadius="5px"
+          >
             <Typography
               variant="h3"
               fontWeight="600"

@@ -28,8 +28,7 @@ const transformForSunburst = (sample) => {
       level = existingChild;
     });
   };
-  console.log("SAMPLE");
-  console.log(sample);
+
   sample[0].output.forEach((entry) => {
     const path = [
       entry.class_name,
@@ -48,8 +47,6 @@ const SunburstChart = ({ data }) => {
   const { palette } = useTheme();
 
   const sunburstData = transformForSunburst(data);
-  console.log("*********");
-  console.log(sunburstData);
   return (
     <ResponsiveSunburst
       data={sunburstData}
@@ -64,11 +61,11 @@ const SunburstChart = ({ data }) => {
         modifiers: [["brighter", 0.2]]
       }}
       enableArcLabels={true}
-      arcLabelsSkipAngle={10}
-      arcLabelsTextColor={{
-        from: "color",
-        modifiers: [["darker", 1.4]]
-      }}
+      arcLabelsSkipAngle={25}
+      // arcLabelsTextColor={{
+      //   from: "color",
+      //   modifiers: [["darker", 1.4]]
+      // }}
     />
   );
 };
